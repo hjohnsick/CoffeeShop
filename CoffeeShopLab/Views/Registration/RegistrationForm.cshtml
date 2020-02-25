@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "RegistrationForm";
+}
+
+@model RegisterUser
+<h1>Registration Form</h1>
+@Html.ValidationSummary()
+<form action="../Registration/RegistrationResult" method="post">
+    @Html.ValidationMessageFor(m => m.FirstName)
+    Enter Your First Name: <input type="text" name="FirstName" value="@Model.FirstName" /><br />
+    @Html.ValidationMessageFor(m => m.LastName)
+    Enter Your Last Name: <input type="text" name="LastName" value="@Model.LastName" /><br />
+    @Html.ValidationMessageFor(m => m.UserName)
+    Create A User Name: <input type="text" name="UserName" value="@Model.UserName" /><br />
+    @Html.ValidationMessageFor(m => m.Email)
+    Enter Email: <input type="text" name="Email" value="@Model.Email" /><br />
+    @Html.ValidationMessageFor(m => m.Password)
+    Enter Password: <input type="text" name="Password" value="@Model.Password" /><br />
+    @Html.ValidationMessageFor(m => m.CancelMembership)
+    Cancel Membership:
+    yes<input type="radio" name="cancelMembership" value="@Model.CancelMembership" />
+    no<input type="radio" name="cancelMembership" value="@Model.CancelMembership" />
+
+    <input type="submit" name="name" value="Register" />
+</form>
